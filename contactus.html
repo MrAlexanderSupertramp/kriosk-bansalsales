@@ -1,0 +1,230 @@
+<!doctype html>
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!-- Fontawesome css -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- Animate css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- Stroke Gap Icon css -->
+        <link rel="stylesheet" href="css/stroke-gap.css">
+        <!-- Nice select css -->
+        <link rel="stylesheet" href="css/nice-select.css">
+        <!-- Jquery fancybox css -->
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <!-- Jquery ui price slider css -->
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <!-- Meanmenu css -->
+        <link rel="stylesheet" href="css/meanmenu.min.css">
+        <!-- Owl carousel css -->
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <!-- Bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Custom css -->
+        <link rel="stylesheet" href="css/default.css">
+        <!-- Main css -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Responsive css -->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- jQuery (only include once) -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Modernizer js -->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <!-- Slick Carousel JS and CSS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+        <!-- Remove duplicate jQuery includes -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+        <!-- JavaScript to toggle the mobile menu -->
+        <script>
+            $(document).ready(function(){
+                $('.mobile-menu nav ul li').click(function(){
+                    $(this).children('ul').slideToggle();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <!-- Main Wrapper Start Here -->
+        <div id="header"></div>
+        <script>
+          fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+        </script>
+        
+        <iframe
+            id="JotFormIFrame-240440647379461"
+            title="Responsive Contact Form - Default Theme"
+            onload="window.parent.scrollTo(0,0)"
+            allowtransparency="true"
+            allowfullscreen="true"
+            src="https://form.jotform.com/240440647379461"
+            frameborder="0"
+            style="min-width:100%;max-width:100%;height:539px;border:none;"
+            scrolling="no"
+            >
+        </iframe>
+        <script type="text/javascript">
+            var ifr = document.getElementById("JotFormIFrame-240440647379461");
+            if (ifr) {
+              var src = ifr.src;
+              var iframeParams = [];
+              if (window.location.href && window.location.href.indexOf("?") > -1) {
+                iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+              }
+              if (src && src.indexOf("?") > -1) {
+                iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+                src = src.substr(0, src.indexOf("?"))
+              }
+              iframeParams.push("isIframeEmbed=1");
+              ifr.src = src + "?" + iframeParams.join('&');
+            }
+            window.handleIFrameMessage = function(e) {
+              if (typeof e.data === 'object') { return; }
+              var args = e.data.split(":");
+              if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+              if (!iframe) { return; }
+              switch (args[0]) {
+                case "scrollIntoView":
+                  iframe.scrollIntoView();
+                  break;
+                case "setHeight":
+                  iframe.style.height = args[1] + "px";
+                  if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
+                    iframe.style.minHeight = args[1] + "px";
+                  }
+                  break;
+                case "collapseErrorPage":
+                  if (iframe.clientHeight > window.innerHeight) {
+                    iframe.style.height = window.innerHeight + "px";
+                  }
+                  break;
+                case "reloadPage":
+                  window.location.reload();
+                  break;
+                case "loadScript":
+                  if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
+                  var src = args[1];
+                  if (args.length > 3) {
+                      src = args[1] + ':' + args[2];
+                  }
+                  var script = document.createElement('script');
+                  script.src = src;
+                  script.type = 'text/javascript';
+                  document.body.appendChild(script);
+                  break;
+                case "exitFullscreen":
+                  if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+                  else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+                  else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+                  else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+                  else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+                  break;
+              }
+              var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+              if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+                var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+                iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+              }
+            };
+            window.isPermitted = function(originUrl, whitelisted_domains) {
+              var url = document.createElement('a');
+              url.href = originUrl;
+              var hostname = url.hostname;
+              var result = false;
+              if( typeof hostname !== 'undefined' ) {
+                whitelisted_domains.forEach(function(element) {
+                    if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
+                        result = true;
+                    }
+                });
+                return result;
+              }
+            };
+            if (window.addEventListener) {
+              window.addEventListener("message", handleIFrameMessage, false);
+            } else if (window.attachEvent) {
+              window.attachEvent("onmessage", handleIFrameMessage);
+            }
+        </script>
+        <style>  
+            @media (max-width: 500px) {
+                .col-lg-3 {
+                    flex: 0 0 50%; /* Make each column take up 50% of the width on smaller screens */
+                    max-width: 50%; /* Limit the maximum width of each column to 50% */
+                }
+            }
+            .footer-social-icon li a {
+                border: 1px solid #e5e119 !important;
+                color: #a15026 !important;
+            }
+        </style>
+        
+        <!-- Footer Area Start Here -->
+        <div id="footer"></div>
+        <script>
+          fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        </script>
+
+        <!-- Footer Area End Here -->
+        <style>
+            @media (max-width: 767px) {
+            .footer-top .row {
+            justify-content: center;
+            }
+            .footer-top .col-lg-3,
+            .footer-top .col-lg-2 {
+            width: 100%; /* Set width to 100% for mobile */
+            }
+            }
+            .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #a6561f;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            }
+            .download-button:hover {
+            background-color: #ffbfaa;
+            }
+        </style>
+        </div>
+        <!-- Main Wrapper End Here -->
+        <!-- jquery Latest Version -->
+        <script src="js/vendor/jquery.min.js"></script>
+        <!-- Mobile menu js -->
+        <script src="js/jquery.meanmenu.min.js"></script>
+        <!-- ScrollUp js -->
+        <script src="js/jquery.scrollUp.js"></script>
+        <!-- Fancybox js -->
+        <script src="js/jquery.fancybox.min.js"></script>
+        <!-- Jquery nice select js -->
+        <script src="js/jquery.nice-select.min.js"></script>
+        <!-- Jquery ui price slider js -->
+        <script src="js/jquery-ui.min.js"></script>
+        <!-- Owl carousel -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Plugin js -->
+        <script src="js/plugins.js"></script>
+        <!-- Main activaion js -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

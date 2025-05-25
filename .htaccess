@@ -1,0 +1,11 @@
+
+RewriteEngine on
+DirectoryIndex home-2.html
+<IfModule mod_rewrite.c>
+RewriteBase /
+</IfModule>
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^bansalsales\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.bansalsales\.net$
+RewriteRule ^/?$ "https\:\/\/bansalsales\.net\/" [R=301,L]
